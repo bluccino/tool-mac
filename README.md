@@ -6,15 +6,18 @@
 
 Provides Bash-script based tools for MacOS.
 
-* sc: screen capture
+| Tool    | Description                        |
+|---------|------------------------------------|
+| sc      | screen capture                     |
+| spacer  | create spacer for Mac desktop dock |
 
 
 # Installation
 
-* make sure that `pimp` is installed, otherwise install from 
+* make sure that `pimp` is installed, otherwise install from
   `https://github.com/bluccino/tool-pimp.git`
 * download git repository
-* in the repository root directory execute 
+* in the repository root directory execute
 ```sh
    $ . pimp
    $ pimp -d  # and follow instructions
