@@ -1,4 +1,24 @@
-# spacer creation for dock
-echo "create a spacer for dock"
+#!/bin/bash
+# spacer - create spacer in the dock of a Mac desktop
+
+   if [ "$*" == "-?" ] || [ "$*" == "--?" ] || [ "$*" == "--help" ]; then
+       echo "  usage: spacer       # create spacer in a Mac desktop's dock"
+       echo '         spacer can then be dragged with mouse to any desired dock position'
+       exit 0
+   fi
+
+#===============================================================================
+# print version: spacer --version
+#===============================================================================
+
+   if [ "$*" == "--version" ] || [ "$*" == "--v" ]; then
+      echo "1.0.0"; exit 0
+   fi
+
+#===============================================================================
+# create dock spacer: spacer
+#===============================================================================
+
+ec -g "== create a spacer for Mac desktop dock"
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
 killall Dock
