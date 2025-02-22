@@ -3,3 +3,6 @@ build
 @pimp
 ~pimp
 test/.pimp
+
+# virtual environment folder
+@mac

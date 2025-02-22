@@ -1,0 +1,62 @@
+#!/bin/bash
+# sc - screen capture on MAC to given or default capture file
+
+   if [ "$*" == "-?" ] || [ "$*" == "--?" ] || [ "$*" == "--help" ]; then
+       echo '  usage: sc           # screen capture & save to ~/Downloads/screen.png'
+       echo '         sc <file>    # screen capture and save to given <file>'
+       echo '         sc -?        # show usage'
+       echo '         sc --version # print version'
+       exit 0
+   fi
+
+#===============================================================================
+# print version: sc --version
+#===============================================================================
+
+   if [ "$*" == "--version" ] || [ "$*" == "--v" ]; then
+      echo "1.0.0"; exit 0
+   fi
+
+#===============================================================================
+# $ sc <file>
+#===============================================================================
+
+   if [ "$1" != "" ] && [ "$2" == "" ]; then
+      screencapture -s $1 || exit 1
+      exit 0
+   fi
+
+#===============================================================================
+# $ sc
+#===============================================================================
+
+   if [ "$*" == "" ]; then
+      screencapture -s ~/Downloads/screenshot.png || exit 1
+      exit 0
+   fi
+
+#===============================================================================
+# cannot deal with anything else ...
+#===============================================================================
+
+   sc -?
+   exit 1
+
+#===============================================================================
+# Appendix
+#===============================================================================
+#
+# Create an Automator Quick Action
+#	1) Open Automator (Cmd + Space, type “Automator”, press Enter).
+#	2) Click New Document → Select Quick Action → Click Choose.
+#	3) Set Workflow receives “no input” in “any application”.
+#	4) Search for “Run Shell Script” in the left sidebar.
+#	5) Drag “Run Shell Script” into the workflow area.
+#	6) Copy and paste this line: `screencapture -s ~/Downloads/screenshot.png`
+# 7) Click File > Save, name it “Screenshot & Save”, and close Automator.
+#
+# Assign a Keyboard Shortcut
+# 1) Go to System Settings > Keyboard > Keyboard Shortcuts.
+# 2) Select Services from the left panel.
+# 3) Scroll down to General and find “Save Clipboard Screenshot”.
+# 4) Click Add Shortcut, then press your desired hotkey (e.g., Cmd + Shift + S).
