@@ -3,4 +3,7 @@
 
 ec -g 'help on workspace @mac'
 echo  '  sc        screen capture'
+echo  '  spacer    create spacer for dock of Mac desktop'
+echo
+echo  '  pimp -d   interactive tool deployment'
 echo  '  pimp -D   deploy files in .pimp/deploy into $BIN folder'
