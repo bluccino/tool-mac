@@ -35,7 +35,7 @@ A more convenient installation using `pimp` command can be found in the appendix
 ## Spacer Tool `spacer`
 
 * to create a spacer in Mac desktop dock
-* such created spacer can then be dragged with the mouser to any desired dock
+* such created spacer can then be dragged with the mouse to any desired dock
   position
 * use `spacer -?` for quick help
 
