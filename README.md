@@ -43,11 +43,31 @@ A more convenient installation using `pimp` command can be found in the appendix
 
 ## Appendix: Convenient Installation Using Pimp Tool
 
-* make sure that `pimp` is installed, otherwise install from
-  `https://github.com/bluccino/tool-pimp.git`
-* clone git repository `https://github.com/bluccino/tool-mac.git`
-* in the repository root directory execute
+### Installation of Pimp
+
+* if `pimp` is installed ignore the following `pimp` installation process
+* Otherwise, In a `bash` shell with installed `curl` execute the following
+  one-line command to download and install `pimp`. Select a number from the list
+  of potential install directories (which are extracted from your PATH).
+
 ```sh
-   $ . pimp
-   $ pimp -d  # and follow instructions
+  HUB=https://raw.githubusercontent.com/bluccino; \
+      curl -s $HUB/tool-pimp/master/bin/pimp >~pimp; bash ~pimp -!
+```
+
+### Convenient Installation of Mac Tools
+
+* install from `https://github.com/bluccino/tool-pimp.git`
+* clone Mac Tools' git repository
+
+```sh
+   git clone https://github.com/bluccino/tool-mac.git
+```
+
+* Navigate to repository root directory and execute
+
+```sh
+   cd tool-mac  # navigate to repository root directory
+   . pimp       # create virtual environment (based on provided `.pimp` recipe)
+   $ pimp -d    # deploy mac tools by selecting a proper binary target directory
 ```
